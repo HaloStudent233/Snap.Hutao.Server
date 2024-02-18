@@ -91,7 +91,7 @@ public sealed class PassportVerificationService
 
         if (!string.Equals(verification.VerifyCode, code, StringComparison.OrdinalIgnoreCase))
         {
-            if (verification.Triesleft < 2)
+            if (verification.TriesLeft < 1)
             {
                 // Out of tries
                 appDbContext.PassportVerifications.RemoveAndSave(verification);
